@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  file-uploader:
+    build: .
+    restart: always
+    env_file: .env
+    volumes:
+      - ./uploads:${UPLOAD_FOLDER}
+    ports:
+      - 5001:5001
