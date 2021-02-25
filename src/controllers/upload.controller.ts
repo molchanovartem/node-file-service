@@ -54,8 +54,6 @@ export async function uploadFiles(req: Request, res: Response) {
 
   await fs.remove(config.s3UploadPath + req.body.uuid)
 
-  return res.send(images.map(img => img.s3path))
-
   let detectedDocuments: IDetectedDocument[] = []
 
   try {
